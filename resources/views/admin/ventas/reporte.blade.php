@@ -105,8 +105,8 @@
                 <td style="text-align: center">{{$contador++}}</td>
                 <td>{{$venta->fecha}}</td>
                 <td>{{$venta->precio_total}}</td>
-                <td>{{$venta->cliente->nombre_cliente}}</td>
-                <td>{{$venta->cliente->nit_codigo}}</td>
+                <td>{{ optional($venta->cliente)->nombre_cliente ?? 'Sin cliente' }}</td>
+                <td>{{ optional($venta->cliente)->nit_codigo ?? 'Sin codigo' }}</td>
                 <td>{{$venta->created_at}}</td>
             </tr>
         @endforeach

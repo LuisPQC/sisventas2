@@ -65,10 +65,10 @@ $fecha_formateada = str_replace(array_keys($meses), array_values($meses), $fecha
         <tr>
             <td width="400px"><b>Fecha: </b>{{$fecha_formateada}}</td>
             <td width="100px"></td>
-            <td><b>Nit/CI: </b>{{$venta->cliente->nit_codigo}}</td>
+            <td><b>Nit/CI: </b>{{ optional($venta->cliente)->nit_codigo ?? 'Sin codigo' }}</td>
         </tr>
         <tr>
-            <td><b>Señor(es): </b>{{$venta->cliente->nombre_cliente}}</td>
+            <td><b>Señor(es): </b>{{ optional($venta->cliente)->nombre_cliente ?? 'Sin cliente' }}</td>
         </tr>
     </table>
 </div>
